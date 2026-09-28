@@ -1,20 +1,30 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    // add six to a number
-    public static int addSix(int a){
-        return a + 6;
+
+    public static boolean lessThanHundred(int[] a){
+        for (int i = 0; i < a.length; i++){
+            if (a[i] >= 100) {
+                return false;
+            }
+        }
+        return true;
     }
 
     static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
-
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + Main.addSix(i));
-        }
+        int[] a = {1,2,3};
+        int[] b = {1};
+        int[] c = new int[4];
+        /*
+        Some differences that are present from the ArrayList class and my class:
+        1) There are extra functions in ArrayList that are not implemented in mine, such as getStart getLast or lookup
+        functions like indexOf.
+        2) The method in which it reallocated and resizes the internal array is not specified, whereas in my
+        implementation, we specify it to double the array size every time it fills up.
+        3) There is no way to get the internal size of the array that is being used. In our IntList class we can simply
+        read the length of the array variable. However, in ArrayList, you use a function called ensureCapacity in order
+        to resize the array to a size that you need it to be.
+         */
+        System.out.println(lessThanHundred(a));
     }
 }
