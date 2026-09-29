@@ -120,6 +120,11 @@ class MainTest {
         assertThrows(IndexOutOfBoundsException.class, () -> intList.remove(3));
     }
     @Test
+    void removeOutOfBoundsOne(){
+        IntList intList = new IntList(new int[]{1,2,3}, 8);
+        assertThrows(IndexOutOfBoundsException.class, () -> intList.remove(3));
+    }
+    @Test
     void removeSuccess(){
         IntList intList = new IntList(of(new int[]{1,2,3}, 5), 3);
         intList.remove(1);
